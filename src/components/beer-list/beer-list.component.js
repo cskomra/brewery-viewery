@@ -7,5 +7,5 @@ export const BeerList = (props) => (
       {props.beers.map( beer => (
         <Beer key={beer.id} beer={beer}/>
       ))} 
-    </div>
+  </div>
 )

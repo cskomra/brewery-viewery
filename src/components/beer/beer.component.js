@@ -3,7 +3,6 @@ import './beer.styles.css';
 import Box from '@mui/material/Box';
 
 
-
 export const Beer = (props) => {
   
   var lactoseDisplay = function(jsonData) {
@@ -21,7 +20,9 @@ export const Beer = (props) => {
     <p> {props.beer.tagline} </p>
     <p> {props.beer.description} </p>
 
-    <h2 style={{display: lactoseDisplay(props.beer), backgroundColor: '#e3b905'}}>Contains Lactose</h2>
+    <div className='warning' style={{display: lactoseDisplay(props.beer)}}>
+      This product contains <strong>lactose</strong>.
+    </div>
 
     <img src={props.beer.image_url} alt='{props.beer.name}'></img>
     <p> ABV: {props.beer.abv} </p>
