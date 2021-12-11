@@ -1,31 +1,31 @@
 import React from 'react';
 import './beer.styles.css';
 import Box from '@mui/material/Box';
+import { Alert } from '@mui/material';
 
 
 export const Beer = (props) => {
+
+  const beerString = JSON.stringify(props.beer);
+  //console.log(beerString);
   
-  var lactoseDisplay = function(jsonData) {
-    let beerString = JSON.stringify(jsonData);
-    if(beerString.includes('lactose')){
-      return 'block';
-    }
-    return 'none';
-  }
-
+  const dryHopSuccessAlert = beerString.includes('dry hop') ? <Alert severity='success'><strong>Dry Hopped</strong>.</Alert> : null;
+  const lactoseWarningAlert = beerString.includes('lactose') ? <Alert severity='warning'><strong>Contains Lactose</strong>.</Alert> : null;
+  
   return(
-  <Box component="span" className='beer-container'>
-    <p>id: {props.beer.id}</p>
-    <h1> {props.beer.name} </h1>
-    <p> {props.beer.tagline} </p>
-    <p> {props.beer.description} </p>
+    <Box component="span" className='beer-container'>
+      <p>id: {props.beer.id}</p>
+      <h1> {props.beer.name} </h1>
+      <p> {props.beer.tagline} </p>
+      <p> {props.beer.description} </p>
 
-    <div className='warning' style={{display: lactoseDisplay(props.beer)}}>
-      This product contains <strong>lactose</strong>.
-    </div>
+      {lactoseWarningAlert}
+      {dryHopSuccessAlert}
 
-    <img src={props.beer.image_url} alt='{props.beer.name}'></img>
-    <p> ABV: {props.beer.abv} </p>
-    <p> IBU: {props.beer.ibu} </p>
-  </Box>
-)}
+      <img src={props.beer.image_url} alt='{props.beer.name}'></img>
+      <p> ABV: {props.beer.abv} </p>
+      <p> IBU: {props.beer.ibu} </p>
+    </Box>
+  )
+}
+

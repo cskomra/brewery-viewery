@@ -16,13 +16,6 @@
 }
 
 img {
-  margin: 1%;
+  margin-top: 5%;
   width: 50%;
-}
-
-.warning {
-  background-color: #ff9800;
-  padding: 10px;
-  border-radius: 3px;
-  margin-bottom: 2%;
 }
