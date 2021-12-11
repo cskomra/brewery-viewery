@@ -1,17 +1,13 @@
 .beer-container {
   display: flex;
   flex-direction: column;
-  background-color: #e3ece2;
-  border: 1px solid grey;
+  background-color: #F8DDA8;
+  border: 3px solid #342404;
   border-radius: 5px;
   padding: 25px;
   cursor: pointer;
   -moz-osx-font-smoothing: grayscale;
-  backface-visibility: hidden;
-  transform: translateZ(0);
-  transition: transform 0.25s ease-out;
   width: 20%;
-  margin: 1%;
   align-items: center;
 }
 
